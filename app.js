@@ -126,37 +126,16 @@ function renderResult() {
   answersNode.appendChild(restart);
 }
 
-document.querySelector("#waitlistForm").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  const formData = new FormData(form);
-  const params = new URLSearchParams(window.location.search);
-  const source = params.get("src") || "прямой переход";
-  const contact = String(formData.get("contact") || "").trim();
-  const grade = String(formData.get("grade") || "").trim();
-  const note = document.querySelector("#formNote");
+const params = new URLSearchParams(window.location.search);
+const sourceField = document.querySelector("#sourceField");
+const nextUrl = document.querySelector("#nextUrl");
 
-  if (!contact) {
-    note.textContent = "Укажите контакт родителя, чтобы отправить заявку.";
-    return;
-  }
+if (sourceField) {
+  sourceField.value = params.get("src") || "прямой переход";
+}
 
-  const subject = "Заявка MathR5: диагностика 5-6 класс";
-  const body = [
-    "Здравствуйте!",
-    "",
-    "Хочу записать ребенка на ранний тест MathR5.",
-    "",
-    `Контакт родителя: ${contact}`,
-    `Класс ребенка: ${grade}`,
-    `Источник перехода: ${source}`,
-    "Согласие родителя: да",
-    "",
-    "Пожалуйста, пришлите ссылку на диагностику и следующий шаг.",
-  ].join("\n");
-
-  window.location.href = `mailto:mathr5app@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  note.textContent = "Открываем письмо. После отправки перенесите заявку в таблицу проверки гипотез.";
-});
+if (nextUrl && window.location.protocol.startsWith("http")) {
+  nextUrl.value = new URL("thanks.html", window.location.href).toString();
+}
 
 renderQuestion();

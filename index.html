@@ -15,7 +15,7 @@
       <nav aria-label="Навигация">
         <a href="#diagnostic">Диагностика</a>
         <a href="#report">Отчет</a>
-        <a href="#practice">Практика</a>
+        <a href="#signup">Запись</a>
       </nav>
     </header>
 
@@ -27,7 +27,7 @@
           <p class="lead">
             Бесплатная 15-минутная диагностика показывает не только правильность ответа,
             но и повторяющийся тип ошибки. После нее родитель получает короткий отчет
-            и следующий шаг практики.
+            и понятный следующий шаг.
           </p>
           <div class="actions">
             <a class="button primary" href="#diagnostic">Начать диагностику</a>
@@ -72,7 +72,7 @@
 
       <section class="band" id="diagnostic">
         <div class="section-head">
-          <p class="eyebrow">Диагностика, версия 0</p>
+          <p class="eyebrow">Быстрая проверка</p>
           <h2>Попробуйте мини-диагностику</h2>
         </div>
         <div class="diagnostic-shell">
@@ -86,12 +86,12 @@
             <div id="feedback" class="feedback" aria-live="polite"></div>
           </div>
           <aside class="diagnostic-side">
-            <h3>Что мы фиксируем</h3>
+            <h3>Что покажет диагностика</h3>
             <ul>
-              <li>старт и завершение диагностики;</li>
-              <li>тип повторяющейся ошибки;</li>
-              <li>какой набор практики дать дальше;</li>
-              <li>какой отчет увидит родитель.</li>
+              <li>где ребенок ошибается чаще всего;</li>
+              <li>какая тема мешает двигаться дальше;</li>
+              <li>что повторить в первую очередь;</li>
+              <li>какой результат увидит родитель.</li>
             </ul>
           </aside>
         </div>
@@ -121,29 +121,33 @@
         </div>
       </section>
 
-      <section class="band" id="practice">
+      <section class="band" id="signup">
         <div class="section-head">
-          <p class="eyebrow">Цикл практики</p>
-          <h2>Первая практика после диагностики</h2>
+          <p class="eyebrow">Ранний тест</p>
+          <h2>Запишитесь на бесплатную диагностику</h2>
         </div>
         <div class="practice-layout">
           <div>
             <ol class="steps">
-              <li>Ученик проходит диагностику.</li>
-              <li>Оператор выбирает один из трех наборов практики.</li>
-              <li>Ученик делает короткую сессию.</li>
-              <li>Родитель получает отчет и следующий шаг.</li>
+              <li>Вы оставляете контакт и класс ребенка.</li>
+              <li>Мы присылаем короткую диагностику по дробям, процентам и пропорциям.</li>
+              <li>Ребенок проходит задания примерно за 15 минут.</li>
+              <li>Вы получаете понятный отчет: где пробел и что делать дальше.</li>
             </ol>
           </div>
-          <form class="waitlist" id="waitlistForm">
-            <h3>Записать семью в ранний тест</h3>
+          <form class="waitlist" id="waitlistForm" action="https://flowform.to/submit" method="POST">
+            <input type="hidden" name="_to" value="mathr5app@gmail.com" />
+            <input type="hidden" name="_subject" value="Новая заявка MathR5" />
+            <input type="hidden" name="_next" id="nextUrl" value="https://nvolkovsky1.github.io/mathR5/thanks.html" />
+            <input type="hidden" name="Источник" id="sourceField" value="прямой переход" />
+            <h3>Получить ссылку на диагностику</h3>
             <label>
               Контакт родителя
-              <input name="contact" placeholder="Telegram, email или телефон" />
+              <input name="Контакт родителя" placeholder="Telegram, email или телефон" required />
             </label>
             <label>
               Класс ребенка
-              <select name="grade">
+              <select name="Класс ребенка">
                 <option>5 класс</option>
                 <option>6 класс</option>
               </select>
@@ -152,8 +156,8 @@
               <input name="consent" type="checkbox" required />
               <span>Я родитель или законный представитель и согласен на короткую диагностику.</span>
             </label>
-            <button type="submit">Отправить заявку</button>
-            <p class="small-note">Откроется письмо на mathr5app@gmail.com. Источник перехода добавится автоматически.</p>
+            <button type="submit">Записаться на диагностику</button>
+            <p class="small-note">Заявка уйдет нам напрямую. Мы ответим и пришлем следующий шаг.</p>
             <p id="formNote" class="form-note" aria-live="polite"></p>
           </form>
         </div>
