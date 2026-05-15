@@ -371,6 +371,28 @@ select {
   font: inherit;
 }
 
+.consent-row {
+  grid-template-columns: 20px 1fr;
+  align-items: start;
+  gap: 10px;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.consent-row input {
+  width: 18px;
+  min-height: 18px;
+  margin: 2px 0 0;
+}
+
+.small-note {
+  margin: -2px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
 .form-note {
   min-height: 22px;
   color: var(--green);

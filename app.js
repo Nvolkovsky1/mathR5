@@ -112,7 +112,7 @@ function renderResult() {
       : score <= 4
         ? "есть точечные пробелы"
         : "можно давать смешанную практику";
-  feedback.textContent = `Следующий шаг: ${level}. Для теста это событие нужно залогировать как diagnostic_completed.`;
+  feedback.textContent = `Следующий шаг: ${level}. Для теста это событие нужно отметить как завершение диагностики.`;
 
   const restart = document.createElement("button");
   restart.type = "button";
@@ -128,8 +128,35 @@ function renderResult() {
 
 document.querySelector("#waitlistForm").addEventListener("submit", (event) => {
   event.preventDefault();
-  document.querySelector("#formNote").textContent =
-    "Интерес зафиксирован в прототипе. В реальном тесте перенесите контакт в таблицу проверки гипотез.";
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+  const params = new URLSearchParams(window.location.search);
+  const source = params.get("src") || "прямой переход";
+  const contact = String(formData.get("contact") || "").trim();
+  const grade = String(formData.get("grade") || "").trim();
+  const note = document.querySelector("#formNote");
+
+  if (!contact) {
+    note.textContent = "Укажите контакт родителя, чтобы отправить заявку.";
+    return;
+  }
+
+  const subject = "Заявка MathR5: диагностика 5-6 класс";
+  const body = [
+    "Здравствуйте!",
+    "",
+    "Хочу записать ребенка на ранний тест MathR5.",
+    "",
+    `Контакт родителя: ${contact}`,
+    `Класс ребенка: ${grade}`,
+    `Источник перехода: ${source}`,
+    "Согласие родителя: да",
+    "",
+    "Пожалуйста, пришлите ссылку на диагностику и следующий шаг.",
+  ].join("\n");
+
+  window.location.href = `mailto:mathr5app@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  note.textContent = "Открываем письмо. После отправки перенесите заявку в таблицу проверки гипотез.";
 });
 
 renderQuestion();

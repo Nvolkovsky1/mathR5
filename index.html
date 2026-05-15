@@ -90,7 +90,7 @@
             <ul>
               <li>старт и завершение диагностики;</li>
               <li>тип повторяющейся ошибки;</li>
-              <li>какой practice pack дать дальше;</li>
+              <li>какой набор практики дать дальше;</li>
               <li>какой отчет увидит родитель.</li>
             </ul>
           </aside>
@@ -130,7 +130,7 @@
           <div>
             <ol class="steps">
               <li>Ученик проходит диагностику.</li>
-              <li>Оператор выбирает один из трех practice packs.</li>
+              <li>Оператор выбирает один из трех наборов практики.</li>
               <li>Ученик делает короткую сессию.</li>
               <li>Родитель получает отчет и следующий шаг.</li>
             </ol>
@@ -148,7 +148,12 @@
                 <option>6 класс</option>
               </select>
             </label>
-            <button type="submit">Зафиксировать интерес</button>
+            <label class="consent-row">
+              <input name="consent" type="checkbox" required />
+              <span>Я родитель или законный представитель и согласен на короткую диагностику.</span>
+            </label>
+            <button type="submit">Отправить заявку</button>
+            <p class="small-note">Откроется письмо на mathr5app@gmail.com. Источник перехода добавится автоматически.</p>
             <p id="formNote" class="form-note" aria-live="polite"></p>
           </form>
         </div>
