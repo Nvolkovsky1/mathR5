@@ -1,0 +1,437 @@
+:root {
+  --ink: #17202d;
+  --muted: #657188;
+  --line: #d9ded7;
+  --paper: #f7f3ea;
+  --white: #fffdf8;
+  --blue: #2f6eb3;
+  --red: #cc4a37;
+  --green: #2d8a68;
+  --amber: #d79a13;
+  --violet: #7256a8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 0 5vw;
+  border-bottom: 1px solid rgba(23, 32, 45, 0.12);
+  background: rgba(247, 243, 234, 0.96);
+  backdrop-filter: blur(10px);
+}
+
+.brand,
+nav,
+.actions,
+.trust-row {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 10px;
+  font-weight: 800;
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: #fff;
+  background: var(--ink);
+  border-radius: 6px;
+}
+
+nav {
+  gap: 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.78fr);
+  gap: 56px;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+  padding: 60px 5vw 72px;
+}
+
+.hero-copy {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 760px;
+  margin-bottom: 22px;
+  font-size: clamp(44px, 7vw, 78px);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 34px;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.lead {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.button,
+button {
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.primary,
+button {
+  color: #fff;
+  background: var(--ink);
+}
+
+.secondary {
+  background: transparent;
+}
+
+.trust-row {
+  gap: 10px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.trust-row span {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255, 253, 248, 0.68);
+  font-size: 13px;
+}
+
+.product-visual,
+.question-panel,
+.diagnostic-side,
+.report-grid article,
+.waitlist {
+  min-width: 0;
+  border: 1px solid rgba(23, 32, 45, 0.14);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 18px 50px rgba(23, 32, 45, 0.08);
+}
+
+.product-visual {
+  padding: 22px;
+}
+
+.visual-header,
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+
+.visual-header strong {
+  color: var(--red);
+  font-size: 32px;
+}
+
+.skill-map {
+  display: grid;
+  gap: 10px;
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+  min-height: 58px;
+  padding: 14px;
+  border-left: 6px solid var(--blue);
+  background: #f4f7fa;
+}
+
+.skill-row b {
+  font-size: 13px;
+}
+
+.skill-row.strong {
+  border-color: var(--green);
+}
+
+.skill-row.medium {
+  border-color: var(--amber);
+}
+
+.skill-row.weak {
+  border-color: var(--red);
+}
+
+.mini-report {
+  margin-top: 18px;
+  padding: 16px;
+  background: #f1e8d6;
+  border-radius: 6px;
+}
+
+.mini-report span,
+.report-grid span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.mini-report p {
+  margin: 6px 0 0;
+  line-height: 1.45;
+}
+
+.band {
+  padding: 70px 5vw;
+  border-top: 1px solid rgba(23, 32, 45, 0.1);
+}
+
+.band.light {
+  background: #fff8ec;
+}
+
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 26px;
+}
+
+.diagnostic-shell,
+.practice-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 20px;
+}
+
+.question-panel,
+.diagnostic-side,
+.waitlist {
+  padding: 22px;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.answer {
+  min-height: 54px;
+  border-color: var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+
+.answer.correct {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.answer.wrong {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.feedback {
+  min-height: 56px;
+  margin-top: 18px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.diagnostic-side ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.report-grid article {
+  padding: 22px;
+}
+
+.report-grid p,
+.steps {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.steps {
+  margin: 0;
+  padding-left: 24px;
+  font-size: 20px;
+}
+
+.steps li + li {
+  margin-top: 14px;
+}
+
+.waitlist {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.form-note {
+  min-height: 22px;
+  color: var(--green);
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 5vw;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .hero,
+  .diagnostic-shell,
+  .practice-layout,
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 42px;
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+  }
+
+  .answers {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button,
+  button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .lead {
+    max-width: 100%;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MathR5 | Диагностика математики 5-6 класс</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">М5</span>
+        <span>MathR5</span>
+      </div>
+      <nav aria-label="Навигация">
+        <a href="#diagnostic">Диагностика</a>
+        <a href="#report">Отчет</a>
+        <a href="#practice">Практика</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Москва · 5-6 класс · дроби, проценты, пропорции</p>
+          <h1>Ребенок понимает ошибку. Родитель видит прогресс.</h1>
+          <p class="lead">
+            Бесплатная 15-минутная диагностика показывает не только правильность ответа,
+            но и повторяющийся тип ошибки. После нее родитель получает короткий отчет
+            и следующий шаг практики.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#diagnostic">Начать диагностику</a>
+            <a class="button secondary" href="#report">Посмотреть отчет</a>
+          </div>
+          <div class="trust-row" aria-label="Ключевые условия">
+            <span>10 минут в день</span>
+            <span>без регистрации ученика</span>
+            <span>ранний доступ 990-1 990 ₽/мес.</span>
+          </div>
+        </div>
+
+        <div class="product-visual" aria-label="Пример карты ошибок">
+          <div class="visual-header">
+            <span>Карта ошибок</span>
+            <strong>6/12</strong>
+          </div>
+          <div class="skill-map">
+            <div class="skill-row strong">
+              <span>20% от 150</span>
+              <b>верно</b>
+            </div>
+            <div class="skill-row weak">
+              <span>3/4 или 5/8</span>
+              <b>путает знаменатель</b>
+            </div>
+            <div class="skill-row medium">
+              <span>45 от 60</span>
+              <b>нужна доля от целого</b>
+            </div>
+            <div class="skill-row weak">
+              <span>x/12 = 5/6</span>
+              <b>ошибка пропорции</b>
+            </div>
+          </div>
+          <div class="mini-report">
+            <span>Следующий шаг</span>
+            <p>3 коротких задания на сравнение дробей и проценты от числа.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" id="diagnostic">
+        <div class="section-head">
+          <p class="eyebrow">Диагностика, версия 0</p>
+          <h2>Попробуйте мини-диагностику</h2>
+        </div>
+        <div class="diagnostic-shell">
+          <div class="question-panel">
+            <div class="progress">
+              <span id="stepLabel">Вопрос 1 из 6</span>
+              <span id="topicLabel">Дроби</span>
+            </div>
+            <h3 id="questionText">Что больше: 3/4 или 5/8?</h3>
+            <div id="answers" class="answers" aria-label="Варианты ответа"></div>
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+          </div>
+          <aside class="diagnostic-side">
+            <h3>Что мы фиксируем</h3>
+            <ul>
+              <li>старт и завершение диагностики;</li>
+              <li>тип повторяющейся ошибки;</li>
+              <li>какой practice pack дать дальше;</li>
+              <li>какой отчет увидит родитель.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="band light" id="report">
+        <div class="section-head">
+          <p class="eyebrow">Отчет для родителя</p>
+          <h2>Отчет, который родитель понимает за минуту</h2>
+        </div>
+        <div class="report-grid">
+          <article>
+            <span>Повторяющаяся ошибка</span>
+            <h3>Знаменатель воспринимается как размер числа</h3>
+            <p>Ребенок может выбрать 5/8 вместо 3/4, потому что 8 больше 4.</p>
+          </article>
+          <article>
+            <span>Объяснение</span>
+            <h3>Это не невнимательность, а пробел в представлении о долях</h3>
+            <p>Нужно увидеть, что больший знаменатель делит то же целое на меньшие части.</p>
+          </article>
+          <article>
+            <span>Следующая практика</span>
+            <h3>3 сессии по 10 минут</h3>
+            <p>Сравнение дробей, общий знаменатель, проценты от числа.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="band" id="practice">
+        <div class="section-head">
+          <p class="eyebrow">Цикл практики</p>
+          <h2>Первая практика после диагностики</h2>
+        </div>
+        <div class="practice-layout">
+          <div>
+            <ol class="steps">
+              <li>Ученик проходит диагностику.</li>
+              <li>Оператор выбирает один из трех practice packs.</li>
+              <li>Ученик делает короткую сессию.</li>
+              <li>Родитель получает отчет и следующий шаг.</li>
+            </ol>
+          </div>
+          <form class="waitlist" id="waitlistForm">
+            <h3>Записать семью в ранний тест</h3>
+            <label>
+              Контакт родителя
+              <input name="contact" placeholder="Telegram, email или телефон" />
+            </label>
+            <label>
+              Класс ребенка
+              <select name="grade">
+                <option>5 класс</option>
+                <option>6 класс</option>
+              </select>
+            </label>
+            <button type="submit">Зафиксировать интерес</button>
+            <p id="formNote" class="form-note" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
